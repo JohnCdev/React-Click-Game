@@ -6,10 +6,10 @@ function Board(props) {
     return (
         <div className="row" id="board">
             {props.images.map((image, i) => (
-                <Card 
+                <Card
                     image={image.src}
-                    clicked={image.clicked.toString()}
                     handleClick={props.handleClick}
+                    index={i}
                     key={i}
                 />
             ))}

@@ -9,7 +9,7 @@ function Card(props) {
                     // style={{ backgroundImage: `url(${props.image})` }}
                     src={props.image}
                     key={props.i}
-                    data-clicked={props.clicked}
+                    data-index={props.index}
                     onClick={props.handleClick}
                     alt="you click"
                 />

@@ -18,15 +18,42 @@ class Game extends React.Component {
     }
 
     handleClick = event => {
-        console.log(event.target.attributes.getNamedItem("data-clicked").value)
+        const index = event.target.attributes.getNamedItem("data-index").value;
+        const newImageState = this.state.images;
+        if (newImageState[index].clicked) {
+            this.setState({
+                lost: true,
+                currentScore: 0,
+                highScore: (this.state.currentScore > this.state.highScore
+                    ? this.state.currentScore
+                    : this.state.highScore)
+            })
+            this.resetBoard()
+        } else {
+            newImageState[index].clicked = true;
+            this.setState({
+                images: newImageState,
+                currentScore: this.state.currentScore + 1
+            })
+        }
+        this.randomMizeImages();
+    }
+
+    randomMizeImages() {
+
+    }
+
+    resetBoard() {
+        
     }
 
     render() {
+
         return (
             <div style={{ minHeight: "100%", paddingBottom: "100px" }} >
                 <Header
                     currentScore={this.state.currentScore}
-                    highScore={this.state.currentScore}
+                    highScore={this.state.highScore}
                     lost={this.state.lost}
                 />
                 <Hero>

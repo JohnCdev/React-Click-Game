@@ -1,0 +1,22 @@
+.hero {
+    height: 400px;
+    background: gray;
+    position: relative;
+}
+
+
+/* Everything inside of the hero goes on top of the filter layer */
+.hero * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1, .hero h2 {
+    color: white;
+}
+
+.hero h1 {
+    font-size: 60px;
+    padding-top: 140px;
+    margin-top: 75px;
+}

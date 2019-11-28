@@ -14,3 +14,42 @@
 .nav a {
     color: black;
 }
+
+.message {
+    transition: color .2s ease;
+    transition: .2s;
+}
+
+.message.wrong {
+    color: red;
+    animation: pulse .57s 1;
+}
+
+.message.right {
+    color: green;
+    animation: pulse .57s 1;
+}
+
+@keyframes pulseWrong {
+    0% {
+        text-shadow: 0 3px 6px rgba(15, 231, 15, 0.16);
+    }
+    50% {
+        text-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 3px 6px rgba(15, 231, 15, 0.16);
+    }
+}
+
+@keyframes pulseRight {
+    0% {
+        text-shadow: 0 3px 6px rgba(231, 15, 15, 0.16);
+    }
+    50% {
+        text-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 3px 6px rgba(231, 15, 15, 0.16);
+    }
+}

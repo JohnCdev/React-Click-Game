@@ -4,14 +4,17 @@ import './style.css';
 function Header(props) {
 
 
+
     return (
         <ul className="nav fixed-top">
             <li className="align-middle">
-                <a href="/">Clicker Game</a>
+                <a href="/">Hollow Knight Clicker Game</a>
             </li>
-            <li className="align-middle">
-                {/* Need to make this have 3 states, start, win, lost. Maybe seperate component?*/}
-                {props.lost ? "true" : "false"}
+            <li className={`align-middle message ${props.lost ? "wrong" : "right"}`}>
+                {/* dosent work */}
+                {/* Animation dosent work quite right */}
+                {console.log(props.chooseMessage)}
+                {props.lost ? "You picked Wrong!" : "You picked correctly!"}
             </li>
             <li className="align-middle">
                 {`Current Score: ${props.currentScore} | High Score: ${props.highScore}`}
